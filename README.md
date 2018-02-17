@@ -1,7 +1,10 @@
 [![Build Status](https://travis-ci.org/navicore/supersix-http.svg?branch=master)](https://travis-ci.org/navicore/supersix-http)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6be03bf590ad4a5b88c2598b4456cb4f)](https://www.codacy.com/app/navicore/supersix-http?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=navicore/supersix-http&amp;utm_campaign=Badge_Grade)
+
 Supersix Demo App HTTP Ingest API
 ===
+
+Receives json-formatted observations at an http endpoint and writes them to Kafka
 
 ### To Run
 
