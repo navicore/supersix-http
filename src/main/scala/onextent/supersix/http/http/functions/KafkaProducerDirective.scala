@@ -26,6 +26,7 @@ trait KafkaProducerDirective extends LazyLogging with Directives {
 
   def write(obj: String, key: String): Directive1[Future[Unit]] = {
 
+    // todo: remove promise use.  direct use of promise is now an anti-pattern :|
     val promise = Promise[Unit]()
     val data = new ProducerRecord[String, String](observationsTopic, key, obj)
 
@@ -37,6 +38,7 @@ trait KafkaProducerDirective extends LazyLogging with Directives {
             logger.error(s"write to kafka $obj failed: $exception")
             promise.failure(exception)
           case None =>
+            logger.debug(s"wrote with key $key to kafka")
             promise.success((): Unit)
         }
 
