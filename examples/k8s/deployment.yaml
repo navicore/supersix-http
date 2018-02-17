@@ -1,0 +1,29 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: supersix-http
+  name: supersix-http
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: supersix-http
+  template:
+    metadata:
+      labels:
+        run: supersix-http
+    spec:
+      containers:
+      - name: supersix-http
+        image: navicore/supersix-http:latest
+        imagePullPolicy: Always
+        env:
+        - name: BOOTSTRAP
+          value: "my-kafka:9092"
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+        ports:
+        - containerPort: 8080
+          protocol: TCP
