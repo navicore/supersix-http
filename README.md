@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/navicore/supersix-http.svg?branch=master)](https://travis-ci.org/navicore/supersix-http)
 Supersix Demo App HTTP Ingest API
 ===
 
