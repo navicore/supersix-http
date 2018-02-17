@@ -10,5 +10,5 @@ COPY target/scala-2.12/*.jar /app/
 
 WORKDIR /app
 
-ENTRYPOINT ["java","-cp", "/SupersixHttp.jar", "-Xms256m", "-Xmx256m"]
+ENTRYPOINT ["java","-jar", "/SupersixHttp.jar", "-Xms256m", "-Xmx256m"]
 
